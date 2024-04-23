@@ -76,7 +76,7 @@ manifold3d==2.4.5
 manipulation==2023.11.8
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
-matplotlib==3.7.5
+matplotlib==3.5.1
 matplotlib-inline==0.1.7
 mdurl==0.1.2
 meshcat==0.3.2
@@ -130,6 +130,7 @@ python-dateutil==2.9.0.post0
 python-fcl==0.7.0.6
 python-qt-binding==0.4.4
 pytz==2024.1
+PyVirtualDisplay==3.0
 PyWavelets==1.4.1
 PyYAML==6.0.1
 pyzmq==26.0.2
