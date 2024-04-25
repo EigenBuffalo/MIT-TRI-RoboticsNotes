@@ -1,4 +1,4 @@
-An attempt to rebuild my knowledge on manipulation and locomotion
+An long term on-going attempt to rebuild knowledge on manipulation and locomotion
 
 ## Course Website
 

@@ -1,3 +1,4 @@
 .deepnote
 .ipynb_checkpoints
 .venv
+results.json
