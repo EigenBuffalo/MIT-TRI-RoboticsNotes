@@ -66,11 +66,13 @@ in code, the vector is P_BA_C
   BsplineTrajectory()
   CompositeTrajectory()
   ExponentialPlusPiecewisePolynomial()
-  ```
+  ```  
 3. Forward Kinematics of iiwa + WSG
 - At joint, two frames overlapped at zero position and only rotate by joint by one angle
 - $^{B_1}X^{M}\cdot^{M}X^{F}(q)\cdot^{F}X^{B_2}$
 - In URDF, when adding bodies, they all have 6dof each;
 - When adding joints, we are actually taking away 5dof from each body
-[图片]
+- Kinematic tree for iiwa is more of a vine than a tree
+- For dexterous hands, the picking up brick is like another branch off the world root node
+
 

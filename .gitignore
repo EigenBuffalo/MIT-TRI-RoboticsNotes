@@ -1,4 +1,5 @@
 .deepnote
 .ipynb_checkpoints
 .venv
+.vscode
 results.json
