@@ -45,6 +45,34 @@ $f_{D}^{B_p}=^{D}R^{C}f_{C}^{B_p}, \tau_{D}^{B_p}=^{D}R^{C}\tau_{C}^{B_p}$
 ## Horizontal force, fundamental concepts in manipulation
 1. Friction Cone, at 43''
    - Coulomb friction: the magnitude of horizontal friction force is prop to the magnitude of normal force
+   - most common friction is coulomb friction
+   - $\left| f_{tangent} \right|_2 \le\mu f_{normal}$, $\mu:$ friction coefficient
+   - $\sqrt{f_{1,cx}^{B^2}+f_{1,cy}^{B^2}}\le \mu f_{1,C_z}^B$
+   - ![frictionCone](./frictionCone.png), the force lives in side the cone to make it stable
+   - if $f_z=0$, $f_x, f_y = 0$, $f_z$ is bigger, $f_{x,y}$ is bigger, which makes sense
+   ![staticsII](./diagram2.png)
+   - the spatial force algebra make the equation neat, we move the cone at contacts to Center and analysis them together
+   - **if the contact velocity can be made zero, friction will be whatever is necessay for contact acceleration to be zero**
+   - else , **Principle of max dissipation**, largest force in the cone opposite direction of contact velocity
+
+2. An interesting Example, table with four legs pushing
+   - the level of rigid-body modelling doesnot capture everything
+   - Since we donot know how force are distributed on the four legs. When pushing, the friction force on each leg is not determined. it could go left or go right or go straint.
+   - whats the solver do? it picks one in the middle, least norm solution
+   - any force that lives inside the cone is a possible solution
+   - when u do simulation, u do LCP, linear Complimentarity problem, Polyhedral approximation
+
+3. Contact points not at corners, penetrations
+   -  even in 3D, you can pick the contact points for different contact pairs, but there is the **harder part**  
+   -  when bodies are moving, contact points are moving. Their forces generated very uneasy to make consistent
+   -  how do you define the normal vectors, even at corners： Use the gradient of the sign distance vectors
+   -  Multi-point contact: put contact sphere at corners, many heuristics. More robust simulations
+   -  "Hydroelastic contact" as implemented in drake: a pressure field model for fast robust approximation of the net contact force and moment between nominally rigid objects
+   - Hydor-elastic is more expensive than point contact
+   - less expensive than finite-element models
+   - state space (for simulation, planning and control) is the original rigid body state
+   - its not sampling, its taking an integral around the surface
+   - summarize the integral of the pressure field in a wrench
 
 ## Questions
 ### 1. How to define the contact normal? Especially when it goes to a corner, its hard to define.
@@ -54,3 +82,15 @@ $f_{D}^{B_p}=^{D}R^{C}f_{C}^{B_p}, \tau_{D}^{B_p}=^{D}R^{C}\tau_{C}^{B_p}$
 
 ### 3. How to contact force impact robot dynamics algorithm? or physice simulator?
 - you calculate all kinds of contacts that are potential contacts and then in rigid body algorithm it does the recursive step through to common frame, summarizes things into a common frame, does all the algebra in the common frame
+
+### 4. For a brick on a slope, is it still mg/2 at two corners?
+
+
+### 5. How about friction cone in 3D?
+- Polyhedral approximation, in order to use solvers. Square root makes cones, but not easy to use QP solvers. Sum of square root is nasty.
+- After polyhedral approximation, write into linear complimentarity problem(LCP). The way to do simulation
+
+### 6. How contact materials affect the equation? what is mu_static and mu_dynamic
+- $\mu$ should comes in pairs of materials, but in simulation its a hassle to do it
+![mu_dynamics vs mu_static](./diagram3.png)
+- the friction once you get start sliding tends to be lower than the sticking friction
