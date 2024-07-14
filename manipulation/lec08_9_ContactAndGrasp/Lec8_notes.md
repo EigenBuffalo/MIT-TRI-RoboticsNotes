@@ -30,7 +30,7 @@
 $f_{C}^{B_p}= f_{C}^{B_q}, \tau_{C}^{B_q}=\tau_{C}^{B_p} + ^{B_q}P_{C}^{B_p}\times f_{C}^{B_p}$
 - spatical force/torque representing in different frame
 $f_{D}^{B_p}=^{D}R^{C}f_{C}^{B_p}, \tau_{D}^{B_p}=^{D}R^{C}\tau_{C}^{B_p}$
-- ![statics](./diagram1.png)
+- ![statics](./assets/diagram1.png)
 - $F_{g,W}^B = [0,0,0,0,0,-mg ]^T$
 - contact frame z axis is the normal, it requires $f_{i,C_z}^B \ge 0$, (push not pull) 
 - How to do the mechanics/ spatical force analysis?
@@ -48,9 +48,9 @@ $f_{D}^{B_p}=^{D}R^{C}f_{C}^{B_p}, \tau_{D}^{B_p}=^{D}R^{C}\tau_{C}^{B_p}$
    - most common friction is coulomb friction
    - $\left| f_{tangent} \right|_2 \le\mu f_{normal}$, $\mu:$ friction coefficient
    - $\sqrt{f_{1,cx}^{B^2}+f_{1,cy}^{B^2}}\le \mu f_{1,C_z}^B$
-   - ![frictionCone](./frictionCone.png), the force lives in side the cone to make it stable
+   - ![frictionCone](./assets/frictionCone.png), the force lives in side the cone to make it stable
    - if $f_z=0$, $f_x, f_y = 0$, $f_z$ is bigger, $f_{x,y}$ is bigger, which makes sense
-   ![staticsII](./diagram2.png)
+   ![staticsII](./assets/diagram2.png)
    - the spatial force algebra make the equation neat, we move the cone at contacts to Center and analysis them together
    - **if the contact velocity can be made zero, friction will be whatever is necessay for contact acceleration to be zero**
    - else , **Principle of max dissipation**, largest force in the cone opposite direction of contact velocity
@@ -92,5 +92,5 @@ $f_{D}^{B_p}=^{D}R^{C}f_{C}^{B_p}, \tau_{D}^{B_p}=^{D}R^{C}\tau_{C}^{B_p}$
 
 ### 6. How contact materials affect the equation? what is mu_static and mu_dynamic
 - $\mu$ should comes in pairs of materials, but in simulation its a hassle to do it
-![mu_dynamics vs mu_static](./diagram3.png)
+![mu_dynamics vs mu_static](./assets/diagram3.png)
 - the friction once you get start sliding tends to be lower than the sticking friction
