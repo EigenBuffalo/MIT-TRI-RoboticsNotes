@@ -9,7 +9,7 @@
 - outliers
 - beyond correspondences based (point set registration)
 - The rgbd sensor in the diagram. Can be rendered using OPENGL or other tools, or remotely using interface provided. Just adding camera in the model parser, the yaml file.
-- ![image](./rgbdSensor.jpg)
+- ![image](./assets/rgbdSensor.jpg)
 
 ## Soft correspondences, Real point clouds are messy
 - Partial View. Correspondence vector, $c_i=j$, means scene i corresponds model point j. **not model to scene points**. Scene points are less than model points.
