@@ -1,5 +1,5 @@
 **Last Lecture** 
-![diffIK](./diffIKsystem.png)
+![diffIK](./assets/diffIKsystem.png)
 Gripper velocity are pre-given. Now we are moving into the perception part.
 
 # Today's Topic: More geometric view of perception, old school of perception, fundation
@@ -17,10 +17,10 @@ Gripper velocity are pre-given. Now we are moving into the perception part.
 - Pay attention to blurring from fast motions and timing it with the spinning laser
 
 ## Perception as a Kinematic Problem
-![ICP-PIC1](./ICP_pic1.jpg)
+![ICP-PIC1](./assets/ICP_pic1.jpg)
 
 ## Convert into QP
-![ICP-PIC2](./ICP_pic2.jpg)
+![ICP-PIC2](./assets/ICP_pic2.jpg)
 
 ## Correspondences, the famous ICP Algorithm
 - Iterative Closest Point, introducing **correspondance vector**, $c_i=j$, an n*1 vector, point $s_i$ correspondance to model point $m_j$
